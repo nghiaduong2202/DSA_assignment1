@@ -8,9 +8,11 @@ public:
     SymbolTable() {}
     void run(string filename);
 
-    void subRun(ifstream& file, LinkedList* list, int block);
+    void subRun(ifstream& file, LinkedList* list, int& block);
 
     int countBlock(string filename);
+
+    int checkBlock(string filename);
 
     bool insert(string line, LinkedList* list, int block);
     
@@ -48,6 +50,17 @@ public:
         this->tail->next = pNew;
         this->tail = pNew;
         return;
+    }
+
+    bool look(string name)
+    {
+        Node* p = head;
+        while(p)
+        {
+            if(p->name == name) return true;
+        }
+
+        return false;
     }
 
     void clear()
