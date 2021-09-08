@@ -1,10 +1,18 @@
 #include<iostream>
 #include<cmath>
-#include "SymbolTable.h"
+#include<fstream>
+#include<string>
+// #include "SymbolTable.h"
 using namespace std;
 int main()
 {
-      LinkedList* list = new LinkedList[2];
-      list[0].add("x", "numberic");
-      list[1].add("x", "string"); 
+      ifstream file("./testcase/test6.txt");
+      string line ;
+      getline(file, line);
+      if(line == "BEGIN")
+            cout << 1;
+      else 
+            cout << 0;
+      return 0;
+
 }
